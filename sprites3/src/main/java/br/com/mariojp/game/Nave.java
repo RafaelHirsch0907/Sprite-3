@@ -4,7 +4,7 @@ import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
-public class Nave extends Sprite {
+public class Nave extends Sprite implements GameObjectInterface {
 	private int dx;
 	private int dy;
 
@@ -22,6 +22,11 @@ public class Nave extends Sprite {
 		missiles = new ArrayList<Missil>(); 
 		carregarImagem("/imagens/nave.png"); 
 		getImageDimensions();
+	}
+
+	@Override
+	public void init() {
+		initNave();
 	}
 
 	public void move() {

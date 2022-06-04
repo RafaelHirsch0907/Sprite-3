@@ -1,6 +1,6 @@
 package br.com.mariojp.game;
 
-public class Inimigo extends Sprite {
+public class Inimigo extends Sprite implements GameObjectInterface {
 
 	private int initX;
 	
@@ -13,6 +13,11 @@ public class Inimigo extends Sprite {
 	private void initInimigo() {
 		carregarImagem("/imagens/alien.png");
 		getImageDimensions();
+	}
+
+	@Override
+	public void init() {
+		initInimigo();
 	}
 
 	public void move() {

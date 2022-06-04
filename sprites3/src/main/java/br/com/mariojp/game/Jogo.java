@@ -41,6 +41,7 @@ public class Jogo extends JPanel implements ActionListener {
 		initJogo();
 	}
 
+
 	private void initJogo() {
 		addKeyListener(new TAdapter());
 		setFocusable(true);
