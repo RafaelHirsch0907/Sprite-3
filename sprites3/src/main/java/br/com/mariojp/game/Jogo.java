@@ -75,14 +75,19 @@ public class Jogo extends JPanel implements ActionListener {
 	}
 
 	private void desenhar(Graphics g) {
+		Iterator inimigosIterator = new GameObjectIterator(inimigos);
+		Iterator misseisIterator = new GameObjectIterator(nave.getMissiles());
+
 		g.drawImage(nave.getImage(), nave.getX(), nave.getY(), this);
 
-		for (Missil m : nave.getMissiles()) {
+		while (misseisIterator.hasNext()) {
+			Missil m = (Missil)misseisIterator.next();
 			if (m.isVisible()) {
 				g.drawImage(m.getImage(), m.getX(), m.getY(), this);
 			}
 		}
-		for (Inimigo i : inimigos) {
+		while (inimigosIterator.hasNext()) {
+			Inimigo i = (Inimigo)inimigosIterator.next();
 			if (i.isVisible()) {
 				g.drawImage(i.getImage(), i.getX(), i.getY(), this);
 			}
